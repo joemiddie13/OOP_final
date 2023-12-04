@@ -1,13 +1,19 @@
 from Person import Person
+from Order import Order
+from CoffeeBar import CoffeeBar
 
-# Person instances
-person1 = Person("Alice", "Coffee")
-person2 = Person("Bob", "Tea")
+# Create 3 instances of customers
+amy = Person("Amy", "Coffee")
+bob = Person("Bob", "Tea")
+cat = Person("Cat", "Milk")
 
-# Generate orders
-order1 = person1.my_order()
-order2 = person2.my_order()
+# Create an instance of CoffeeBar
+coffee_bar = CoffeeBar("Rocko Brewing")
 
-# Print order details
-print(order1.to_string())
-print(order2.to_string())
+# Place orders
+coffee_bar.place_order(amy.my_order())
+coffee_bar.place_order(bob.my_order())
+coffee_bar.place_order(cat.my_order())
+
+# Process orders
+coffee_bar.process_orders()
